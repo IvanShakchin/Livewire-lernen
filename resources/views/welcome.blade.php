@@ -28,6 +28,7 @@
     @endphp
 
     <div class="container my-5">
+    
 
         {{-- вариант передачи данных из шаблона lastName='Doe' --}}
         <livewire:user.user-list  lastName='Doe' :title="$title" :$second_title />
