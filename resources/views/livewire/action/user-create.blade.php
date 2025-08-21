@@ -1,4 +1,4 @@
-<div class='col-md-4'>
+<div>
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
@@ -22,9 +22,11 @@
         <div wire:loading wire:target='addUser' class="spinner-border text-danger" role="status">  
             <span class="visually-hidden">Loading...</span>
         </div> 
-    </form>     
-            <button  wire:click="$refresh" class='btn btn-success my-2'  >refresh</button> 
+    </form>  
+
+        <button  wire:click="$refresh" class='btn btn-success my-2'  >refresh</button> 
         <div wire:loading class="spinner-border text-danger" role="status">  
             <span class="visually-hidden">Loading...</span>
         </div> 
 </div>
+
