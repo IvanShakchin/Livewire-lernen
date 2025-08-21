@@ -6,11 +6,19 @@ use App\Models\User;
 use Livewire\Component;
 use Livewire\Attributes\On; 
 
-use App\Livewire\Forms\UserForm;
+use Livewire\WithPagination;
+use Livewire\WithoutUrlPagination;
+
 
 class ActionsExample extends Component
 {
-    public UserForm $form;
+    // подключаем трейт пагинации
+    // По умолчанию пагинатор Livewire отслеживает текущую страницу 
+    // в строке запроса URL-адреса браузера следующим образом: ?page=2.
+    // убрать это можно добавив , WithoutUrlPagination
+    use WithPagination;
+
+
 
     public function deleteUser( int $id)
     {
@@ -29,7 +37,7 @@ class ActionsExample extends Component
     {
         return view('livewire.action.actions-example',[
             // добавляем сортировку списка новые вверху
-            'users'=> User::query()->orderBy('id','desc')->get(),
+            'users'=> User::query()->orderBy('id','desc')->paginate(10),
         ]);
     }
 }
