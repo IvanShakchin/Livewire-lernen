@@ -7,11 +7,15 @@ use Livewire\Attributes\Validate;
 use App\Models\User;
 
 use App\Livewire\Forms\UserForm;
+use Livewire\Attributes\Layout;
 
 
+#[Layout('layouts.my-shablon')] // используется шаблон my-shablon
 class UserCreate extends Component
 {
     public UserForm $form;
+
+    public $title = 'dfasdfasdf';
 
     public function addUser()
     {
@@ -23,9 +27,10 @@ class UserCreate extends Component
         // dump($user);
         $this->dispatch('post-created', $user);
     }
-
+     
     public function render()
     {
-        return view('livewire.action.user-create');
+        return view('livewire.action.user-create')
+        ->title('динамически title передали через метод'); 
     }
 }

@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $title ?? 'Page Title app'}}</title>
-    <!-- Подключите Tailwind CSS -->
+    <title>{{ $title ?? 'Page Title my-shablon '}}</title>
+       <!-- Подключите Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
 </head>
+<body class="antialiased bg-gray-100" style="background: #d6ffc8d9;">
 @include('incs.nav')
-<body class="antialiased bg-gray-100">
        <div class="container my-5">
         <div class='row'>
             {{ $slot }}

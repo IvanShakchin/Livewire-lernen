@@ -5,11 +5,13 @@ namespace App\Livewire\Action;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\Attributes\On; 
-
 use Livewire\WithPagination;
 use Livewire\WithoutUrlPagination;
 
+use Livewire\Attributes\Layout;
 
+
+#[Layout('layouts.app')] // используется шаблон app
 class ActionsExample extends Component
 {
     // подключаем трейт пагинации
@@ -31,8 +33,14 @@ class ActionsExample extends Component
     {
        //dump($user);
        // здесь можно выполнять дополнительную логику
+        Debugbar::info('hello');
+        Debugbar::addMessage('This is a message');
+        dump($user);
+
     }
 
+
+    #[Title('ActionsExample передали через #')]
     public function render($user = null)
     {
         return view('livewire.action.actions-example',[
